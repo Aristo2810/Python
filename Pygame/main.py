@@ -1,18 +1,7 @@
 import pygame
+from game import Game
 
-
-pygame.init()
-
-
-class Game:
-
-    def __int__(self):
-        self.fen = pygame.display.set_mode((800, 600))
-
-    def run_game(self) -> None:
-        running = True
-        while running:
-            for event in pygame.event.get():
-                if event == pygame.QUIT:
-                    running = False
-        pygame.quit()
+if __name__ == '__main__':
+    pygame.init()
+    game = Game()
+    game.run()

@@ -16,12 +16,12 @@ class Game:
 
             self.fen.blit(self.bg, (0, 0))
             self.fen.blit(self.joueur.image, self.joueur.rectangle)
+            self.joueur.grp_projectile.draw(self.fen)
 
-            if self.touche.get(pygame.K_RIGHT):
+            if self.touche.get(pygame.K_RIGHT) and self.joueur.rectangle.x <= 1280:
                 self.joueur.droite()
-            elif self.touche.get(pygame.K_LEFT):
+            elif self.touche.get(pygame.K_LEFT) and self.joueur.rectangle.x >= -25:
                 self.joueur.gauche()
-
             pygame.display.flip()
 
             for event in pygame.event.get():
@@ -30,6 +30,8 @@ class Game:
 
                 elif event.type == pygame.KEYDOWN:
                     self.touche[event.key] = True
+                    if event.key == pygame.K_SPACE:
+                        self.joueur.lancer()
 
                 elif event.type == pygame.KEYUP:
                     self.touche[event.key] = False

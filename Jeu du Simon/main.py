@@ -13,6 +13,9 @@ def main():
         if ''.join(suite) != proposition:
             perdu = True
     print(f"Perdu !\nVous avez réussi {len(suite) - 1}")
+    replay = input("Voulez vous rejouer ?(o/n)\n==> ")
+    if replay == 'o':
+        main()
 
 
 if __name__ == '__main__':

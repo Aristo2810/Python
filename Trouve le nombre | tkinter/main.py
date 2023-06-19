@@ -2,6 +2,7 @@ import tkinter as tk
 import random
 
 
+
 class Front:
 
     def __init__(self, fen):

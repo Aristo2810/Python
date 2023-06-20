@@ -10,7 +10,7 @@ class Front:
         self.setup_display()
         self.back = Back(self.fen)
 
-    def setup_display(self):
+    def setup_display(self) -> None:
         self.fen.configure(bg=self.rgbtohex(36, 68, 92))
         self.fen.geometry("1080x720")
         self.entry = tk.Entry(self.fen, width=40)

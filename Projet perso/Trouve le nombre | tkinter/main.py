@@ -17,7 +17,9 @@ class Front:
         self.var = tk.StringVar()
         self.entry.pack(pady=100)
         self.label = tk.Label(
-            self.fen, bg=self.rgbtohex(36, 68, 92), textvariable=self.var
+            self.fen, 
+            bg=self.rgbtohex(36, 68, 92), 
+            textvariable=self.var
         )
         self.label.pack()
         # self.btn = tk.Button(self.fen, command=self.back.get_entry, width=15, text="Valider")
